@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcadIOTest", "AcadIOTest\AcadIOTest.csproj", "{A44079A0-D4B2-459B-9E74-650705B2B6A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TitleBlockMap", "..\TitleBlockMap\TitleBlockMap\TitleBlockMap.csproj", "{5806A901-054F-48D6-A9B0-14C25528C0BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A44079A0-D4B2-459B-9E74-650705B2B6A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A44079A0-D4B2-459B-9E74-650705B2B6A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A44079A0-D4B2-459B-9E74-650705B2B6A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A44079A0-D4B2-459B-9E74-650705B2B6A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5806A901-054F-48D6-A9B0-14C25528C0BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5806A901-054F-48D6-A9B0-14C25528C0BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5806A901-054F-48D6-A9B0-14C25528C0BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5806A901-054F-48D6-A9B0-14C25528C0BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

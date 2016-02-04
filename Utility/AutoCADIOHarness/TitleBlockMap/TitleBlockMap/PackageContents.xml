@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ApplicationPackage
+    SchemaVersion="1.0"
+    Version="1.0"
+    ProductCode=""
+    HelpFile=""
+    Name="ADNTestDWGSignaturePackage"
+    Description="AutoCAD.IO Test Package"
+    Author="Xiaodong Liang" >
+
+  <CompanyDetails
+      Name="Autodesk, Inc"
+      Phone="415.555.5555"
+      Url="www.autodesk.com"
+      Email="xiaodong.liang@autodesk.com" />
+
+  <Components>
+    <RuntimeRequirements
+        OS="Win64"
+        Platform="AutoCAD" />
+
+    <ComponentEntry
+        AppName="ADNTestDWGSignaturePackage"
+        ModuleName="./Contents/TitleBlockMap.dll"
+        AppDescription="AutoCAD.IO .net test app"
+        LoadOnCommandInvocation="True"
+        LoadOnAutoCADStartup="False"
+            >
+      <Commands GroupName="MyTestCommands">
+        <Command Global="GenerateTBJson" Local="GenerateTBJson" />
+        <Command Global="updateTBFromJson" Local="updateTBFromJson" />
+       </Commands>
+      <AssemblyMappings>
+        <AssemblyMapping Name="ADNTestDWGSignaturePackage.Newtonsoft.Json" Path="./Contents/Newtonsoft.Json.dll" />
+        <AssemblyMapping Name="ADNTestDWGSignaturePackage.RestSharp" Path="./Contents/RestSharp.dll" />
+      </AssemblyMappings>
+    </ComponentEntry>
+    <ComponentEntry
+        AppName="ADNTestDWGSignaturePackage.Newtonsoft.Json"
+        AppType="Dependency"
+        ModuleName="./Contents/Newtonsoft.Json.dll"
+        AppDescription="JSON processing library"
+        LoadOnAutoCADStartup="False"
+        />
+
+    <ComponentEntry
+         AppName="ADNTestDWGSignaturePackage.RestSharp"
+         AppType="Dependency"
+         ModuleName="./Contents/RestSharp.dll"
+         AppDescription="JSON processing library"
+         LoadOnAutoCADStartup="False"
+        />
+
+  </Components>
+</ApplicationPackage>

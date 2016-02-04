@@ -1,0 +1,33 @@
+{
+  "name": "DWG-TitleBlock-Signature",
+  "description": "A demo with the workflow to make signature on the title block of a AutoCAD DWG",
+  "version": "1.0.0",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": ">= 4.12.3",
+    "request": ">= 2.55.0",
+    "serve-favicon": ">= 2.2.0",
+	"multer": "^0.1.8", 
+	 "q":"latest",
+	 "util" : "latest"
+	 
+  },  
+  "files": [
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "contributors": [
+    "Xiaodong Liang <xiaodong.liang@autodesk.com>"     
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaodongliang/DWG-TitleBlock-Signature"
+  }
+}
