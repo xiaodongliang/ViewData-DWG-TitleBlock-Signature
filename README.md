@@ -12,12 +12,12 @@ Demo Site Usage
 Note: since this is an experimental application, it can only detect a title block on the layer whose name is ‘AM_BOR’.
   * 2. Show Panel: this button will pop out a panel. Click the area of the title block fields, the corresponding attribute will be detected, if it is a Text, its current value will be displayed. Note: The demo website works on computer web. On iPad and iPhone, it is not working with touching point because of an issue of View & Data.
   ![Picture](https://github.com/xiaodongliang/DWG-TitleBlock-Signature/blob/master/Help/appusage2.png)
-   In [Text] mode, input the new value and click [Update] button to confirm the new value. In [Signature] mode, draw any graphics by mouse and click [Update] button to confirm the new value.
+  * In [Text] mode, input the new value and click [Update] button to confirm the new value. In [Signature] mode, draw any graphics by mouse and click [Update] button to confirm the new value.
  ![Picture](https://github.com/xiaodongliang/DWG-TitleBlock-Signature/blob/master/Help/appusage3.png)
  ![Picture](https://github.com/xiaodongliang/DWG-TitleBlock-Signature/blob/master/Help/appusage4.png)
   * 3 Update Drawing: click this button, all updated values of the title block will be sent to server and Autodesk IO & Viewer to produce the updated drawing. After a moment, the updated drawing will be displayed in the window with the new values. A layer named ‘signature_layer’ is added. It can show on / off the signature.
   ![Picture](https://github.com/xiaodongliang/DWG-TitleBlock-Signature/blob/master/Help/appusage5.png) 
-  ![Picture](https://github.com/xiaodongliang/DWG-TitleBlock-Signature/blob/master/Help/appusage65.png) 
+  ![Picture](https://github.com/xiaodongliang/DWG-TitleBlock-Signature/blob/master/Help/appusage6.png) 
   * 4 Download Result: click this button, the result updated DWG file will be downloaded. Or if any issue with IO job, the report file will be downloaded.
    
 Local Test of AutoCAD Package and IO
