@@ -2,7 +2,7 @@
 ===========================
 This is an Node.js application that allows the user fill in the title block fields with text or signature in an AutoCAD drawing in the browser. The signatures will be merged to the drawing (as a kind of entity ‘Solid’). The application also provides the user to download the updated drawing. 
 
-Application Usage
+Demo Site Usage
 -----------------------------------
 * Demo site: [http://adnxddwgsig.herokuapp.com/viewer.html](http://adnxddwgsig.herokuapp.com/viewer.html)
 * Open the page. A default demo drawing will be loaded. The right-bottom corner is the title block that can be modified. 
@@ -52,7 +52,8 @@ class Program
  {      
 
        //replace with the source dwg and json of your own
-       //these two urls below are provided by xiaodong liang (xiaodong.liang@autodesk.com). They can subject to change or delete
+       //these two urls below are provided by xiaodong liang (xiaodong.liang@autodesk.com). 
+       // They may subject to change or delete
        public static string sourceDWGUrl = "https://adnxdtest.herokuapp.com/adnxdtestgetdwgfile";
        public static string ExternalJsonUrl = "https://adnxdtest.herokuapp.com/adnxdtestgetjsonfile";
 
@@ -60,11 +61,76 @@ class Program
     * Rename package id, activity id if you like
     * Build and run the program. It will firstly create the package, upload the binary (bundle) of [TitleBlockMap] to IO. Then it creates one activity to generate the json file of the source DWG, linking to the package. Then run a work item (job) to generate json file from this DWG. It also creates the other activity to update the DWG file with the json. Then run a work item (job) to update the DWG with the demo json.
     
+Dependencies of Application
+-----------------------------------
+* Make sure to create the package, two activities locally where are mentioned in [Local Test of AutoCAD Package and IO] >> Test [AcadIOTest].
+* The Javascript library of signature is from [https://github.com/szimek/signature_pad](https://github.com/szimek/signature_pad) . A copy is enclosed in this repository at [/www/js/signature_pad.js](https://github.com/xiaodongliang/DWG-TitleBlock-Signature/blob/master/www/js/signature_pad.js)
+* Install [Node.js](https://nodejs.org/) on your machine and clone this repo. Download the project dependencies using npm before launching the app by running the following command in the project root directory:
+```
+npm install
+```
+This will install the following node.js modules in the project:
 
-
+	express
+	request
+	serve-favicon
+	body-parser
+	multer
+	q 
 	
- 
- 
+Setup/Usage Instructions
+-----------------------------------
+Currently this sample has been tested on Windows OS with Autodesk production server (vs. staging). It should also work with OSX/Linux, or Autodesk staging server, but has not yet been tested.
+
+* Apply for your own credentials (API keys) of AutoCAD I/O and View &Data from developer.autodesk.com
+* From the sample root folder, replace the placeholders with your own keys in [credentials.js](https://github.com/xiaodongliang/DWG-TitleBlock-Signature/blob/master/credentials.js). In addition, make sure to provide valid urls for source DWG and json file. 
+```
+viewer_credentials: {
+	credentials:
+		{
+			// Replace placeholder below by the Consumer Key and Consumer Secret you got from
+			// http://developer.autodesk.com/ for the production server
+			client_id:  '<Your Key of Viewer>',
+			client_secret:   'You Secret of Viewer>',
+			grant_type: 'client_credentials'
+		},			
+		// If you which to use the Autodesk View & Data API on the staging server, change this url
+		BaseUrl: 'https://developer.api.autodesk.com',
+		Version: 'v1',
+		BucketNameStr: '<Your Bucket Name>',
+		
+	....... ......
+	
+IO_credentials: {
+	credentials:
+		{
+			// Replace placeholder below by the Consumer Key and Consumer Secret you got from
+			// http://developer.autodesk.com/ for the production server
+			client_id:  '<Your Key of AutoCAD IO>',
+			client_secret:   'You Secret of AutoCAD IO>',
+			grant_type: 'client_credentials'
+		},
+		// your urls of source DWG and updated Json
+		// in my test sample, I create a HTTP call that can return the DWG and Json on the server, given the file name.
+		SourceDWGUrl: function(filename){return "https://adnxddwgsig.herokuapp.com/getdwgfile/"+filename;},
+		ExternalJsonUrl: function(filename){return "https://adnxddwgsig.herokuapp.com/getjsonfile/"+filename;},
+		
+	....... ......	
+		
+```
+* Upload one of your models to your account and get its URN using another workflow sample, for example:
+  -  Windows: [.NET WPF application workflow sample](https://github.com/Developer-Autodesk/workflow-wpf-view.and.data.api) 
+   - Browser: [models.autodesk.io web page](http://models.autodesk.io) or [java lmv walk through web page](http://javalmvwalkthrough-vq2mmximxb.elasticbeanstalk.com)
+* Copy the URN which was generated in the previous step in file [/www/viewer.js] at line #20 <br />
+  ```
+  var defaultUrn = '<replace with your encoded urn>';
+  ```
+  
+ * Run the server from the Node.js console, by running the following command: <br />
+  ```
+  node server.js
+  ```
+* Connect to your local server using a WebGL-compatible browser: [http://localhost:3001/](http://localhost:5000/viewer.html)
    
     
 ## License
