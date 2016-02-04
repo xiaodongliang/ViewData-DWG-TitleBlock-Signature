@@ -3,10 +3,9 @@
 This is an Node.js application that allows the user fill in the title block fields with text or signature in an AutoCAD drawing in the browser. The signatures will be merged to the drawing (as a kind of entity ‘Solid’). The application also provides the user to download the updated drawing. 
 
 Application Usage (Demo site: http://adnxddwgsig.herokuapp.com/viewer.html) 
-1.	Open the page. A default demo drawing will be loaded. The right-bottom corner is the title block that can be modified. 
+	1. 	Open the page. A default demo drawing will be loaded. The right-bottom corner is the title block that can be modified. 
 
-    
-2.	custom buttons:
+  2.	custom buttons:
     1)	New Drawing: this button allows user to upload a new local drawing. The drawing with same name on the server will be replaced.   
         After uploading, a process will start. after a moment, the new drawing will be displayed in the window. 
         
