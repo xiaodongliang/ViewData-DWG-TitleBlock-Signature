@@ -130,7 +130,7 @@ IO_credentials: {
   ```
   node server.js
   ```
-* Connect to your local server using a WebGL-compatible browser: [http://localhost:3001/](http://localhost:5000/viewer.html)
+* Connect to your local server using a WebGL-compatible browser: [http://localhost:8080/](http://localhost:8080/viewer.html)
    
     
 ## License
